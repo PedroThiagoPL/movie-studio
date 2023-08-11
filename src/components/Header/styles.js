@@ -14,7 +14,7 @@ export const Container = styled.div`
     transition: background-color 1s ease-in-out;
 
     img {
-        width: 25%;
+        width: 26%;
     }
 `
 
