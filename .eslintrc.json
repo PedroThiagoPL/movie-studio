@@ -1,0 +1,60 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "standard",
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "overrides": [],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "eslint-plugin-import-helpers"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "printWidth": 80, //Largura das linhas
+                "tabWidth": 2, //Espaços no começo da página
+                "singleQuote": true, // aspas simples
+                "trailingComma": "none", // virgula no fim da linha
+                "arrowParens": "always",
+                "semi": false, // ponto e virgula no fim da linha
+                "endOfLine": "auto"
+            }
+        ],
+        "react/react-in-jsx-scope": "off", //Para não obrigar a importação do React em todas as páginas
+        "react/prop-types": "off", //Para não ficar colocando qual tipo do arquivo
+        "react-hooks/rules-of-hooks": "error", //Para da erro no React Hooks quando fizer alguma cagada
+        "react-hooks/exhaustive-deps": "warn", //Para mostrar o warn quando fizer cagada
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always", // new line between groups
+                "groups": [
+                    "/^react/",
+                    "module",
+                    "/^@shared/",
+                    [
+                        "parent",
+                        "sibling",
+                        "index"
+                    ]
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "ignoreCase": true
+                }
+            }
+        ]
+    }
+}
